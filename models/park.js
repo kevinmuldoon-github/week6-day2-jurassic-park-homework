@@ -83,7 +83,10 @@ Park.prototype.diet_types = function () {
         
     } // end for loop
 
-    let diet_types = {carnivores: number_of_carnivores, herbivores: number_of_herbivores , omnivores:number_of_omnivores};
+    let diet_types = {
+        carnivores: number_of_carnivores, 
+        herbivores: number_of_herbivores , 
+        omnivores:number_of_omnivores};
 
     return diet_types;
 };

@@ -101,10 +101,12 @@ describe('Park', function() {
     park.add_dinosaur(dinosaur1);
     park.add_dinosaur(dinosaur2);
     park.add_dinosaur(dinosaur3);
+    park.add_dinosaur(dinosaur4);
+    park.add_dinosaur(dinosaur5);
     park.remove_all_particular_species('T-Rex');
 
     const actual = park.dinosaurs;
-    assert.deepStrictEqual(actual, [dinosaur2]);
+    assert.deepStrictEqual(actual, [dinosaur2, dinosaur4, dinosaur5]);
   });
 
   it('should provide an object containing diet types and the number of dinosaurs for each' , function () {
@@ -117,7 +119,6 @@ describe('Park', function() {
   
     const actual = park.diet_types();
     assert.deepStrictEqual(actual,{ 'carnivores': 2, 'herbivores': 1, 'omnivores': 2 } );
-
 
   });
   
