@@ -60,6 +60,11 @@ Park.prototype.calculate_yearly_revenue = function () {
 
 Park.prototype.remove_all_particular_species = function (species) {
 
+    for (let dinosaur of this.dinosaurs) {
+        if (dinosaur.species == species) {
+            this.remove_dinosaur(dinosaur);
+        } // end of if statement
+    } // end for loop
 };
 
 module.exports = Park;
