@@ -67,4 +67,25 @@ Park.prototype.remove_all_particular_species = function (species) {
     } // end for loop
 };
 
+Park.prototype.diet_types = function () {
+    let number_of_carnivores = 0;
+    let number_of_herbivores = 0;
+    let number_of_omnivores = 0;
+
+    for (let dinosaur of this.dinosaurs) {
+        if (dinosaur.diet == 'carnivore') {
+            number_of_carnivores +=1;
+        } else if (dinosaur.diet == 'herbivore') {
+            number_of_herbivores+=1;
+        } else {
+            number_of_omnivores+=1;
+        } // end of if else statement
+        
+    } // end for loop
+
+    let diet_types = {carnivores: number_of_carnivores, herbivores: number_of_herbivores , omnivores:number_of_omnivores};
+
+    return diet_types;
+};
+
 module.exports = Park;

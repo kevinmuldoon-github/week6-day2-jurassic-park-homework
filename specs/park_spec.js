@@ -8,12 +8,16 @@ describe('Park', function() {
   let dinosaur1;
   let dinosaur2;
   let dinosaur3;
+  let dinosaur4;
+  let dinosaur5;
 
   beforeEach(function () {
 
     dinosaur1 = new Dinosaur('T-Rex', 'carnivore', 50);
     dinosaur2 = new Dinosaur('Yoshi', 'carnivore', 25);
     dinosaur3 = new Dinosaur('T-Rex', 'omnivore', 15);
+    dinosaur4 = new Dinosaur('Magic Dragon', 'herbivore', 30);
+    dinosaur5 = new Dinosaur('Yoshi', 'omnivore', 20);
   
     park = new Park ('Loch Lomond', 30);
 
@@ -103,6 +107,20 @@ describe('Park', function() {
     assert.deepStrictEqual(actual, [dinosaur2]);
   });
 
-  it('should provide an object containing diet types and the number of dinosaurs in the park of that diet type');
+  it('should provide an object containing diet types and the number of dinosaurs for each' , function () {
+
+    park.add_dinosaur(dinosaur1);
+    park.add_dinosaur(dinosaur2);
+    park.add_dinosaur(dinosaur3);
+    park.add_dinosaur(dinosaur4);
+    park.add_dinosaur(dinosaur5);
+  
+    const actual = park.diet_types();
+    assert.deepStrictEqual(actual,{ 'carnivores': 2, 'herbivores': 1, 'omnivores': 2 } );
+
+
+  });
+  
 
 });
+
